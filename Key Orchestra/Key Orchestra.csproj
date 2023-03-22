@@ -38,6 +38,7 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
@@ -99,13 +100,13 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Core\" />
-    <Folder Include="Icons\" />
     <Folder Include="MVVM\Model\" />
     <Folder Include="MVVM\Themes\" />
     <Folder Include="MVVM\View\" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Icon.png" />
+    <Resource Include="Icons\Icon.ico" />
+    <Resource Include="Icons\Icon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
