@@ -24,7 +24,7 @@ namespace Key_Orchestra
             {
                 Visible = true,
                 Icon = new System.Drawing.Icon(icon),
-                Text = "タスクトレイ常駐アプリのテストです",
+                Text = "Key Orchestra",
                 ContextMenuStrip = menu
             };
             notifyIcon.MouseClick += new System.Windows.Forms.MouseEventHandler(NotifyIcon_Click);
