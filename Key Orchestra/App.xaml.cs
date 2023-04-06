@@ -13,6 +13,9 @@ namespace Key_Orchestra
     /// </summary>
     public partial class App : Application
     {
+        private Boolean ApplicationHiddenIs;
+        public Boolean get_ApplicatoinHiddenIs() { return ApplicationHiddenIs; }
+        public void set_ApplicationHiddenIs(Boolean value) { ApplicationHiddenIs = value; }
         protected override void OnStartup(StartupEventArgs e)
         {
             base.OnStartup(e);
@@ -28,14 +31,20 @@ namespace Key_Orchestra
                 ContextMenuStrip = menu
             };
             notifyIcon.MouseClick += new System.Windows.Forms.MouseEventHandler(NotifyIcon_Click);
+
+            set_ApplicationHiddenIs(true);
         }
 
         private void NotifyIcon_Click(object sender, System.Windows.Forms.MouseEventArgs e)
         {
-            if (e.Button == System.Windows.Forms.MouseButtons.Left)
+            if (get_ApplicatoinHiddenIs())
             {
-                var wnd = new MainWindow();
-                wnd.Show();
+                if (e.Button == System.Windows.Forms.MouseButtons.Left)
+                {
+                    var wnd = new MainWindow();
+                    wnd.Show();
+                    set_ApplicationHiddenIs(false);
+                }
             }
         }
 

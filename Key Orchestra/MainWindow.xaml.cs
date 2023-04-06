@@ -20,6 +20,7 @@ namespace Key_Orchestra
     /// </summary>
     public partial class MainWindow : Window
     {
+
         public MainWindow()
         {
             InitializeComponent();
@@ -31,10 +32,6 @@ namespace Key_Orchestra
                 DragMove();
         }
 
-        private void ButtonMinimalize_Click(object sender, RoutedEventArgs e)
-        {
-            Application.Current.MainWindow.WindowState = WindowState.Minimized;
-        }
         private void ButtonMaximum_Click(object sender, RoutedEventArgs e)
         {
             if (Application.Current.MainWindow.WindowState != WindowState.Maximized)
@@ -42,9 +39,11 @@ namespace Key_Orchestra
             else
                 Application.Current.MainWindow.WindowState = WindowState.Normal;
         }
-        private void ButtonClose_Click(object sender, RoutedEventArgs e)
+        private void ButtonHide_Click(object sender, RoutedEventArgs e)
         {
-            Application.Current.Shutdown();
+            this.Hide();
+            var app = (App)Application.Current;
+            app.set_ApplicationHiddenIs(true);
         }
 
     }
